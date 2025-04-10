@@ -9,10 +9,10 @@ app = FastAPI()
 # CORS for React
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["localhost:3000", "localhost:8000"],  # Replace with React URL in production
-    allow_credentials=True,
+    allow_origins=["*"],  # Replace with React URL in production
     allow_methods=["*"],
     allow_headers=["*"],
+    allow_credentials=True,
 )
 
 # Endpoints
@@ -22,4 +22,5 @@ async def root():
 
 @app.post("/search")
 async def search_documents(request: QueryRequest):
+    print("Received query:", request.query)
     return {"results": request.query}
