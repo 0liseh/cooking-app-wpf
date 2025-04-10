@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "start": "concurrently --kill-others-on-fail --names \"frontend,backend-api\" -c \"cyan,green\" \"npm run frontend\" \"npm run backend-api\"",
+    "frontend": "cd frontend && npm start",
+    "backend-api": "cd python-api-oc && start http://localhost:8000/docs && python -m uvicorn app:app --reload"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}

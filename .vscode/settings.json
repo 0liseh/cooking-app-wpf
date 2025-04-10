@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "iostream": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "Disabled",
+    "python.analysis.extraPaths": [
+        "./gov-doc-aggregator/gov-doc-aggregator-backend/api/models",
+        "./gov-doc-aggregator/backend/api/models"
+    ]
+}

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjcrdc5nmam2i"]
+
+[ext_resource type="Script" path="res://DamagePopup.gd" id="1_6hvsl"]
+
+[node name="Label3D" type="Label3D"]
+script = ExtResource("1_6hvsl")

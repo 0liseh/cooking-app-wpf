@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://c6qcyjxvrgnr"]
+
+[ext_resource type="Script" path="res://TestPlayer1Script.gd" id="1_k1muh"]
+[ext_resource type="Script" path="res://TestEnemyNPC.gd" id="2_qatqr"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_bhi8r"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ygm1g"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_1c6qo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w4dvs"]
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00365818, 0, 0)
+
+[node name="Player1" type="CharacterBody3D" parent="."]
+script = ExtResource("1_k1muh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player1"]
+transform = Transform3D(1, 0, 0, 0, 0.999813, -0.0193196, 0, 0.0193196, 0.999813, 1.79441, 0.187446, 0.659779)
+mesh = SubResource("BoxMesh_bhi8r")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player1"]
+shape = SubResource("BoxShape3D_ygm1g")
+
+[node name="EnemyNPC" type="CharacterBody3D" parent="."]
+transform = Transform3D(0.707107, -0.183013, -0.683013, 0.353553, 0.928023, 0.117362, 0.612372, -0.324469, 0.720916, -2, 1, 1)
+script = ExtResource("2_qatqr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="EnemyNPC"]
+transform = Transform3D(0.958119, 0.244862, -0.148493, -0.276973, 0.924106, -0.263274, 0.072757, 0.293377, 0.953224, -0.203045, 0.440134, -2.5413)
+mesh = SubResource("BoxMesh_1c6qo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EnemyNPC"]
+shape = SubResource("BoxShape3D_w4dvs")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.999711, 0.0240309, 0, -0.0240309, 0.999711, -2.44162, 0.292248, 2.61194)
+current = true
+fov = 123.828
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.97057, 1.64368, -2.09973)
